@@ -1,20 +1,14 @@
 class Solution {
     public int solution(int[] arr) {
-        int answer = 0;
+        int result = arr[0];
 
-        int temp = lcm(arr[0], arr[1]);
-
-        for(int i = 2; i < arr.length; i++) {
-            temp = lcm(temp, arr[i]);
+        for(int i = 1; i < arr.length; i++) {
+            result = lcm(result, arr[i]);
         }
 
-        answer = temp;
-
-        return answer;
+        return result;
     }
 
-
-    
     //최대공약수
     public int gcd(int a, int b) {
         if(b == 0) {
